@@ -68,15 +68,22 @@ dependencies {
     // LiveData
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
     testImplementation(libs.junit)
+    testImplementation ("org.mockito:mockito-inline:4.+")
+
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
+    androidTestImplementation("org.mockito:mockito-android:3.+")
+
+// Opcionalmente, puedes agregar el siguiente paquete para hacer mocking en pruebas instrumentadas:
+    androidTestImplementation("org.mockito.kotlin:mockito-kotlin:4.0.0")
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
     testImplementation("org.mockito:mockito-core:3.+")
     testImplementation (libs.mockito.kotlin)
     testImplementation(libs.mockito.inline)
     testImplementation(libs.kotlinx.coroutines.test)
+
 
 }
