@@ -16,6 +16,7 @@ import com.booktrace.test2.ui.theme.Test2Theme
 
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.runtime.collectAsState
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
@@ -40,7 +41,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun MainContent(quoteViewModel: QuoteViewModel) {
-    val quote by quoteViewModel.quote.observeAsState()
+    val quote by quoteViewModel.quote.collectAsState()
 
     Column {
         quote?.let {
