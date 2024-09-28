@@ -52,7 +52,7 @@ class QuoteUnitTests {
 
         //Arrange
         val mockRepository = mock(QuoteRepository::class.java)
-        val expectedQuote = Quote("seven", "f")
+        val expectedQuote = Quote("No cuentes los días, haz que los días cuenten.", "Muhammad Ali")
         `when`(mockRepository.getRandomQuote()).thenReturn(expectedQuote)
 
         //Act
@@ -66,7 +66,6 @@ class QuoteUnitTests {
         val actualQuote =  viewModel.quote.value
         println("Actual quote: ${viewModel.quote.value}")
         assertEquals(expectedQuote, actualQuote)
-
 
     }
 }
